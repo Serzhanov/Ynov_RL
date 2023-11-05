@@ -9,7 +9,8 @@ This project is a Streamlit web application for analyzing and visualizing crime 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Data Analysis Summary](#data-analysis-summary)
+- [Developer Guide](#developer-guide)
 - [License](#license)
 
 ## Overview
@@ -43,7 +44,7 @@ This project provides a web-based interface for analyzing and visualizing crime 
    cd python get_data.py
     - {"username":"nurbekserzhanov","key":"22428bfc29fca4dd29a805d7cb7ab091"}
 
-3. Usage:
+## Usage:
     #get back to main repository cd ..
 
     streamlit run main.py
