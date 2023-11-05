@@ -42,8 +42,11 @@ This project provides a web-based interface for analyzing and visualizing crime 
    pip install -r requirements.txt
 
 3. Download data:
-   -cd data
-   -python get_data.py
+
+   cd data
+   
+   python get_data.py
+   
     - {"username":"nurbekserzhanov","key":"22428bfc29fca4dd29a805d7cb7ab091"}
 
 ## Usage:
