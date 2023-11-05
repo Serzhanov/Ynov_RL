@@ -110,4 +110,5 @@ Before making changes, ensure that you have the necessary dependencies installed
 python -m pip install -r requirements.txt
 ```
 
+## License
 This project is licensed under the MIT License.
