@@ -42,7 +42,7 @@ def create_histogram(df):
     st.subheader("Crime Distribution")
     crime_counts = df['Desc'].value_counts()
     sorted_counts = crime_counts.sort_values(ascending=True)
-    crime_bar = px.bar(x=sorted_counts.values, y=sorted_counts.index, title='Crime Distribution', labels={'x': 'Counts', 'y': 'Crime Type'})
+    crime_bar = px.bar(x=sorted_counts.values, y=sorted_counts.index, title='Crime Distribution', labels={'x': 'Counts', 'y': 'Crimes'})
     st.plotly_chart(crime_bar)
 
     # Histogram for Boro
@@ -80,7 +80,7 @@ def create_pie_chart(filtered_df_boro_race, filtered_df_boro_crime_race, filtere
     st.plotly_chart(fig_filtered_crime)
 
     # Pie chart based on Age, Sex, and Race filters
-    st.subheader("Arrests by Age, Sex, and Race (Filtered)")
+    st.subheader("Arrests by Sex, and Race (Filtered)")
     filtered_sex_race_counts = filtered_df_sex_race.groupby(['Sex', 'Race']).size().reset_index(name='Count')
     fig_filtered_sex_race = px.pie(filtered_sex_race_counts, names='Race', values='Count', title='Arrests by Sex and Race (Filtered)')
     st.plotly_chart(fig_filtered_sex_race)

@@ -49,7 +49,7 @@ This project provides a web-based interface for analyzing and visualizing crime 
     streamlit run main.py
 
 Open a web browser and navigate to the URL provided by Streamlit (typically http://localhost:8501).
-Use the web interface to interact with the crime data. You can filter the data, view histograms, and generate pie charts.
+Use the web interface to interact with the crime data. You can filter the data and generate pie charts,also view histograms.
 Explore the geographical distribution of crime data on the map with the heatmap layer.
 
 
