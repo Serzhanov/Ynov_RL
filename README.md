@@ -41,7 +41,7 @@ This project provides a web-based interface for analyzing and visualizing crime 
 2. Install all requirements & fetch data:
    pip install -r requirements.txt
    cd data
-   cd python get_data.py
+   python get_data.py
     - {"username":"nurbekserzhanov","key":"22428bfc29fca4dd29a805d7cb7ab091"}
 
 ## Usage:
