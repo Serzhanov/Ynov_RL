@@ -1,6 +1,8 @@
 import streamlit as st
 import plotly.express as px
 import folium_map
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Function to get multiselect filters from the sidebar
 def get_multiselects_filters(df):
@@ -23,7 +25,6 @@ def get_multiselects_filters(df):
 
 # Data Visualization Functions
 def create_histogram(df):
-    # Create and return histogram plots
 
     # Create three histograms for Age, Sex, and Crime
     st.title("Histograms")
@@ -98,3 +99,27 @@ def create_folium_map(df):
     # Create and display the Folium map
     map_component = folium_map.folium_map(df)
     st.components.v1.html(map_component._repr_html_(), width=700, height=500, scrolling=True)
+
+
+
+def plot_data(y):
+  """ y is a 1D vector """
+  x = np.arange(y.size)
+  _ = plt.plot(x, y, 'o')
+
+def multi_plot_data(data, names):
+    fig, axes = plt.subplots(nrows=len(names), figsize=(8, 6))
+    # Plot data on each subplot
+    for i, ax in enumerate(axes):
+        x = np.arange(data[i].size)
+        ax.plot(x, data[i], 'o', markersize=2, label=names[i])
+        ax.legend(loc='upper right', prop={'size': 8}, numpoints=1)
+        ax.set_title(f'Subplot {i + 1}')
+        ax.set_xlabel('X-axis Label (steps)')
+        ax.set_ylabel('Y-axis Label (regrets)')
+
+    st.title('Multi-Plot Streamlit App')
+    st.pyplot(fig)
+
+
+    
