@@ -11,6 +11,7 @@ This project is a Streamlit web application for analyzing and visualizing crime 
 - [Usage](#usage)
 - [Data Analysis Summary](#data-analysis-summary)
 - [Developer Guide](#developer-guide)
+- [Thompson Sampling for Multi-Armed Bandits](#thompson-sampling)
 - [License](#license)
 
 ## Overview
@@ -113,6 +114,30 @@ Before making changes, ensure that you have the necessary dependencies installed
 ```bash
 python -m pip install -r requirements.txt
 ```
+### Thompson Sampling for Multi-Armed Bandits
+
+This repository implements Thompson Sampling, a probabilistic algorithm for solving the Multi-Armed Bandit problem. The solution includes a Python implementation of the bandit problem, various algorithms for exploration and exploitation, and a Streamlit web application for interactive visualization.
+
+
+Bandit Problem
+The Multi-Armed Bandit problem involves a set of slot machines (arms), each with an unknown probability distribution of providing a reward. The goal is to maximize the cumulative reward over time by choosing the arms strategically.
+
+
+**Bandit Class**
+The Bandit class represents the environment with multiple arms. Each arm has a randomly generated probability of providing a reward. The probabilities can be stationary or updated periodically, simulating non-stationary scenarios.
+
+**Beta Algorithms**
+The repository includes the BetaAlgo class, which models the distribution of bandit arms using a Beta distribution. It implements two algorithms based on Beta distributions: BernGreedy (Beta-Greedy) and BernThompson (Thompson Sampling).
+
+**Epsilon-Greedy Algorithm**
+The EpsilonGreedy class implements the Epsilon-Greedy algorithm, a simple exploration-exploitation strategy where the algorithm sometimes explores randomly (epsilon-greedy) and other times exploits the current best-known arm.
+
+**UCB (Upper Confidence Bound) Algorithm**
+The UCB class implements the UCB algorithm, which balances exploration and exploitation by selecting arms with the highest upper confidence bounds.
+
+**Streamlit App**
+The Streamlit web application (main.py) provides an interactive interface for experimenting with the implemented algorithms. Users can visualize the results of Thompson Sampling and other algorithms on a multi-plot chart.
+
 
 ## License
 This project is licensed under the MIT License.
