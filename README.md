@@ -11,7 +11,7 @@ This project is a Streamlit web application for analyzing and visualizing crime 
 - [Usage](#usage)
 - [Data Analysis Summary](#data-analysis-summary)
 - [Developer Guide](#developer-guide)
-- [Thompson Sampling for Multi-Armed Bandits](#thompson-sampling)
+- [Thompson Sampling for Multi-Armed Bandits](#thompson-sampling-for-multi-armed-bandits)
 - [License](#license)
 
 ## Overview
