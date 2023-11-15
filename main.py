@@ -19,9 +19,7 @@ def main():
 
     # Perform one-hot encoding
     one_hot_encoded = pd.get_dummies(filtered_data['Boro'], prefix='Boro')
-    # Concatenate the one-hot encoded columns to the original DataFrame
-
-    regrets,names=algorithms_applicaiton.experiment(len(one_hot_encoded.values[0]),one_hot_encoded.values)
+    
 
     # Get multiselect filters from the sidebar  
     filtered_df_boro_race, filtered_df_boro_crime_race, filtered_df_sex_race = data_visualization.get_multiselects_filters(filtered_data)
@@ -34,6 +32,12 @@ def main():
     data_visualization.create_folium_map(filtered_data)
 
     #Multi-Plot Bandits
+    '''Using Thompson sampling on district area of NY'''
+    st.title('Multi-Plot Streamlit App')
+    num_arms=len(one_hot_encoded.values[0])
+    true_labels=one_hot_encoded.values
+    timesteps,simulations=data_visualization.generate_thompson_inputs()
+    regrets,names=algorithms_applicaiton.experiment(num_arms,true_labels,timesteps,simulations)
     data_visualization.multi_plot_data(regrets, names)
   
 

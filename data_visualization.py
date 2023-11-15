@@ -115,11 +115,15 @@ def multi_plot_data(data, names):
         ax.plot(x, data[i], 'o', markersize=2, label=names[i])
         ax.legend(loc='upper right', prop={'size': 8}, numpoints=1)
         ax.set_title(f'Subplot {i + 1}')
-        ax.set_xlabel('X-axis Label (steps)')
+        ax.set_xlabel('X-axis Label (simulations)')
         ax.set_ylabel('Y-axis Label (regrets)')
 
-    st.title('Multi-Plot Streamlit App')
     st.pyplot(fig)
 
 
-    
+def generate_thompson_inputs():
+     # Input fields
+    input1 = st.slider('Select a value for timesteps', min_value=10, max_value=100, value=10)
+    input2 = st.checkbox('Stationary',value=True)
+
+    return input1,input2
